@@ -1,0 +1,11 @@
+{
+    "appName": "compound-widget",
+    "notifications": {
+      "slack_channels": [
+        "fedops-urgent-default"
+      ]
+    },
+    "deploy_annotations": [
+      "compound-widget"
+    ]
+  }

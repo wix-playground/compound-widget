@@ -34,7 +34,7 @@ class App extends React.Component<AppProps> {
         Lazy:
         <LazyWidget>
           hello
-          {/* <LazyWidget.PaymentMethodsList /> */}
+          <LazyWidget.PaymentMethodsList />
 
           {/* <LazyWidget.PaymentMethodScreen />
           <LazyWidget.MandatoryFields />

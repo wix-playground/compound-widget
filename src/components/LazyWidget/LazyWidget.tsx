@@ -1,6 +1,9 @@
 import * as React from 'react';
 
 const Widget = React.lazy(() => (new Promise((res) => setTimeout(res, 2000))).then(() => import('../Widget/Widget')));
+const PaymentMethodsList = React.lazy(() => (new Promise((res) => setTimeout(res, 2000))).then(() => import('../Widget/PaymentMethodsList')));
+// const PaymentMethodScreen = React.lazy(() => (new Promise((res) => setTimeout(res, 2000))).then(() => import('../Widget/Widget')));
+// const MandatoryFields = React.lazy(() => (new Promise((res) => setTimeout(res, 2000))).then(() => import('../Widget/Widget')));
 
 export function LazyWidget(props: any) {
 
@@ -14,3 +17,7 @@ export function LazyWidget(props: any) {
     </div>
   )
 }
+
+LazyWidget.PaymentMethodsList = PaymentMethodsList;
+// LazyWidget.PaymentMethodScreen = PaymentMethodScreen;
+// LazyWidget.MandatoryFields = MandatoryFields;

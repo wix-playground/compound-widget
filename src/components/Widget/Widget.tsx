@@ -1,19 +1,6 @@
 import * as React from 'react';
-
-const WidgetContext = React.createContext({
-  activeMethod: '',
-  setActiveMethod: (() => {}) as any,
-});
-
-function useWidgetContext() {
-  const context = React.useContext(WidgetContext);
-  if (!context) {
-    throw new Error(
-      `Widget compound components cannot be rendered outside the Widget component`,
-    )
-  }
-  return context
-}
+import PaymentMethodsList from './PaymentMethodsList';
+import { WidgetContext, useWidgetContext } from './WidgetContext';
 
 // TODO: lazy!
 
@@ -32,24 +19,24 @@ export function Widget(props: any) {
 };
 Widget.displayName = 'Widget';
 
-const PaymentMethodsList: React.FC = () => {
-  const { activeMethod, setActiveMethod } = useWidgetContext();
-  const methods = ['Credit Card', 'PayPal', 'iDeal']; // get from store
-  return (
-    <div>
-      PaymentMethodsList:
-      <ul>
-        {methods.map((method) => (
-          <li key={method} onClick={() => setActiveMethod(method)}>
-            <div style={{color: activeMethod === method ? 'red' : 'black' }}>
-              {method}
-            </div>
-          </li>
-        ))}
-      </ul>
-    </div>
-  );
-}
+// const PaymentMethodsList: React.FC = () => {
+//   const { activeMethod, setActiveMethod } = useWidgetContext();
+//   const methods = ['Credit Card', 'PayPal', 'iDeal']; // get from store
+//   return (
+//     <div>
+//       PaymentMethodsList:
+//       <ul>
+//         {methods.map((method) => (
+//           <li key={method} onClick={() => setActiveMethod(method)}>
+//             <div style={{color: activeMethod === method ? 'red' : 'black' }}>
+//               {method}
+//             </div>
+//           </li>
+//         ))}
+//       </ul>
+//     </div>
+//   );
+// }
 
 const MethodIcon:React.FC = () => {
   return (
